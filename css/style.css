@@ -75,20 +75,20 @@ input:focus {
 
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 2.2rem;
-
+    font-size:2.2rem;
 }
+
 
 #register-form p {
 
     text-align: center;
-    margin-bottom: 1.5;
-    color: #AAA;
+    margin-bottom: 1.5rem;
+    color: #aaa;
     font-size: 0.8rem;
 
 }
 
-.form-control{
+.form-control {
     margin-bottom: 1rem;
     display: flex;
   flex-direction: column;
@@ -101,16 +101,15 @@ input:focus {
 
 .form-control input { 
  border: none; 
- border-bottom: 1px  solid  #AAA; 
+ border-bottom: 1px  solid #AAA; 
  padding: .6rem 0 ;
  
 }
 
 #generate-password { 
-font-weight: bold ;
-cursor: pointer; 
-transition: .4s; 
-
+font-weight:bold;
+cursor:pointer; 
+transition:.4s; 
 
 }
 
@@ -119,7 +118,7 @@ transition: .4s;
 
 }
 
-#register-form #generate-password { 
+#register-form #generated-password { 
     border: 1px solid #0099ff;
     border-radius: 4px ; 
     font-weight: bold; 
@@ -138,7 +137,7 @@ transition: .4s;
 
 }
 
-#register-form input[type="submit" ] { 
+#register-form input[type="submit"] { 
     background-color: #81d340; 
     color:#fff ; 
     opacity: .8; 
@@ -151,6 +150,6 @@ transition: .4s;
     transition: 0.4s;
 }
 
-#register-form input[type="submit" ]:hover { 
+#register-form input[type="submit"]:hover { 
     opacity: 1;
 }
