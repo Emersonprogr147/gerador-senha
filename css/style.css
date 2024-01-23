@@ -16,7 +16,7 @@ body {
 }
 
 html {
-    background: linear-gradient(180deg, rgba(234, 2, 255, 1)0%, #0097ff 100%);
+    background: linear-gradient(180deg, rgb(169, 87, 176)0%, #0097ff 100%);
 
 }
 
@@ -46,7 +46,7 @@ input:focus {
 }
 
 #banner-layer {
-    background-color: rgba(46, 41, 80, 0.7);
+    background-color: rgba(51, 46, 79, 0.7);
     height: 100%;
     padding: 2rem;
     display: flex;
@@ -56,10 +56,10 @@ input:focus {
 
 #register-banner h1 {
 
-    font: size 4ram;
-    margin-bottom: 1.5;
+    font: size 5ram;
+    margin-bottom: 1.8;
     color: #fff;
-    word-spacing: 50rem;
+    word-spacing: 60rem;
 }
 
 #register-form {
