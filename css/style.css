@@ -113,8 +113,9 @@ transition:.4s;
 
 }
 
-#generate-password:hover { 
-    color: #0099ff; 
+#open-generate-password:hover { 
+    color: #69aad6; 
+    opacity: 1;
   
 }
 
@@ -122,33 +123,35 @@ transition:.4s;
     border: 1px solid  #0099ff;
     border-radius: 1px ; 
     font-weight: bold; 
-    font-size: 1.2rem; 
-    padding: .4rem; 
+    font-size: 1.4rem; 
+    padding: .1.2rem; 
     color: #333; 
     text-align:center; 
     margin-bottom: 1rem; 
-   display: none ; 
+ display: none ; 
 } 
 
-#register-form #generate-password p { 
+#register-form #generated-password p { 
 
     color: #81d340; 
     margin-bottom: 0.5rem; 
 
 }
 
-#register-form input[type="submit"], 
-#copy-password ,#generate-password{ 
+#register-form input[type="submit"], #copy-password,
+#generate-options button{ 
     background-color: #81d340; 
     color:#fff ; 
     opacity: .8; 
     border: none ; 
-    border-radius: 2rem;
+    border-radius: 3rem;
     padding: 1rem 1.4rem ; 
     max-width: 150px; 
     cursor: pointer ; 
     align-self: flex-end; 
     transition: 0.4s;
+    font-weight:bold;
+transition:.4s; 
 }
 
 #register-form input[type="submit"]:hover { 
@@ -183,8 +186,33 @@ transition:.4s;
 
 }
 
-#generate-options button { 
+#generate-options button ,  #generate-password { 
     background-color: #0097ff;
     display: block;
     margin: 0 auto;
+    color:#fff ;
+    opacity: .8; 
+    border: none ; 
+    border-radius: 2rem;
+    padding: 1rem 1.4rem ; 
+    max-width: 160px; 
+    cursor: pointer ; 
+    align-self: flex-end; 
+    transition: 0.4s;
+}
+
+
+
+#copy-password { 
+
+    margin: 1rem auto ;
+    background-color: transparent; 
+    border: 2px solid #81d340; 
+    color: #81d340;
+    padding: 0.5rem  1rem ; 
+
+}
+
+.hide { 
+    display:none; 
 }
