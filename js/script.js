@@ -2,16 +2,16 @@
 const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElement = document.querySelector("#generated-password");
 
-//New Function 
 
- 
-const openGeneratorPasswordButton = document.querySelector("#open-generate-password");
-const generatorPasswordContainer = document.querySelector("#generate-options");
-const lengthInput = document.querySelector("#length");
-const lettersInput = document.querySelector("#letters");
-const numbersInput = document.querySelector("#numbers"); 
-const symbolsInput = document.querySelector("#symbols"); 
-const copyPasswordButton = document.querySelector("#copy-password"); 
+//New Function with option for select the type in  Password 
+
+const openCloseGeneratorButton = document.querySelector("#open-generate-password")
+const generatorPasswordContainer = document.querySelector("#generate-options")
+const lengthInput = document.querySelector("#length")
+const lettersInput = document.querySelector("#letters")
+const numbersInput = document.querySelector("#numbers")
+const symbolsInput = document.querySelector("#symbols")
+const copyPasswordButton = document.querySelector("#copy-password")
 
 //Function  for  to generate Password 
 
@@ -29,52 +29,81 @@ const getNumber = () => {
 };
 
 
-const getSymbol = () => {
-    const symbols = "(){} []=<> /.,!@#$%&*+-";
+const getSymbols = () => {
+    const symbols = "(){} []=<>/.,!@#$%&*";
     return symbols[Math.floor(Math.random() * symbols.length)];
 };
 
-const generatePassword = (getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol) => {
+const generatePassword = (
+    getLetterLowerCase,
+    getLetterUpperCase,
+    getNumber,
+    getSymbols
+) => {
 
-    let password = " " 
-    const passwordLength = 10
+    let password = " ";
 
-    const generators = [
+    // segunda version 
+    const passwordLength = lengthInput.value;
 
-        getLetterLowerCase,
-        getLetterUpperCase,
-        getNumber,
-        getSymbol 
-    ] 
+    const generators = [];
+    if (lettersInput.checked) {
+
+        generators.push(getLetterLowerCase, getLetterUpperCase);
+    }
+
+    if (numbersInput.checked) {
+
+        generators.push(getNumber);
+
+    }
+
+     if (symbolsInput.checked) {
+ 
+         generators.push(getSymbols);
+ 
+     } 
+
+
+
+
+    if (generators.length === 0) {
+        return;
+
+    }
+
+    console.log(generators.length);
 
 
     for (i = 0; i < passwordLength; i = i + 4) {
-        generators.forEach(() => { 
-              const randomValue = generators[Math.floor(Math.random() * generators.length)]() ; 
-       password += randomValue ;
+        generators.forEach(() => {
+            const randomValue = generators[Math.floor(Math.random() * generators.length)]();
+            password += randomValue;
         });
     }
 
- password = password.slice(0, passwordLength); 
+    password = password.slice(0, passwordLength);
 
+    generatedPasswordElement.style.display = "block";
 
-    generatedPasswordElement.style.display = "block ";
+    generatedPasswordElement.querySelector("h4").innerText = password;
 
-    generatedPasswordElement.querySelector("h4").innerText = password ;
-};
+}
 
-
-//Event
+//Event for click and  to hide options in password 
 generatePasswordButton.addEventListener("click", () => {
-    generatePassword( getLetterLowerCase,
+    generatePassword(getLetterLowerCase,
         getLetterUpperCase,
         getNumber,
-        getSymbol
-        );
+        getSymbols
+    );
+});
+
+openCloseGeneratorButton.addEventListener("click", () => {
+    generatorPasswordContainer.classList.toggle("hide");
+
 });
 
 
-openGeneratorPasswordButton.addEventListener("click",  ()=> { 
-generatorPasswordContainer.classList.toggle("hide");
+// Event for click  and save  register  
 
-});
