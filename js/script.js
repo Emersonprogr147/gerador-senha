@@ -104,5 +104,21 @@ openCloseGeneratorButton.addEventListener("click", () => {
 });
 
 
+
+copyPasswordButton.addEventListener("click", (e) => {
+ e.preventDefault()
+
+
+ const password = generatedPasswordElement.querySelector("h4").innerText
+ console.log(password);
+ navigator.clipboard.writeText(password).then (()=>  {
+
+    copyPasswordButton.innerText= "Senha Copiada com Sucesso !";
+ }); 
+
+}); 
+
+
+
 // Event for click  and save  register  
 
