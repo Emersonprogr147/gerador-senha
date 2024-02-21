@@ -43,8 +43,8 @@ const generatePassword = (
 
     let password = " ";
 
-    // segunda version 
-    const passwordLength = lengthInput.value;
+    // segunda version  
+    const passwordLength = +lengthInput.value;
 
     const generators = [];
     if (lettersInput.checked) {
@@ -66,16 +66,15 @@ const generatePassword = (
 
 
 
+     console.log(generators.length);
 
     if (generators.length === 0) {
         return;
 
     }
 
-    console.log(generators.length);
 
-
-    for (i = 0; i < passwordLength; i = i + 4) {
+    for (i = 0; i < passwordLength; i = i + generators.length) {
         generators.forEach(() => {
             const randomValue = generators[Math.floor(Math.random() * generators.length)]();
             password += randomValue;
