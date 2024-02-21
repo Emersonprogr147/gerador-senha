@@ -114,6 +114,12 @@ copyPasswordButton.addEventListener("click", (e) => {
  navigator.clipboard.writeText(password).then (()=>  {
 
     copyPasswordButton.innerText= "Senha Copiada com Sucesso !";
+
+    setTimeout(() => { 
+
+        copyPasswordButton.innerHTML = "copiar";
+
+    },1000) 
  }); 
 
 }); 
